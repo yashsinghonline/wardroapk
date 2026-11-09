@@ -48,7 +48,7 @@ import { WishlistView } from './components/WishlistView';
 import { StorageAndBackupModal } from './components/StorageAndBackupModal';
 import { ToastContainer } from './components/ToastContainer';
 import { FullImagePreviewModal, PreviewSlide } from './components/FullImagePreviewModal';
-import { LandingPage } from './components/LandingPage';
+import { LandingPage, APK_URL, APK_FILENAME } from './components/LandingPage';
 
 type ActiveTab = 'home' | 'wardrobe' | 'style' | 'insights';
 type AppView = 'landing' | 'app';
@@ -443,9 +443,11 @@ export function App() {
     return (
       <div className="min-h-screen editorial-bg flex items-center justify-center">
         <div className="text-center space-y-3">
-          <div className="w-11 h-11 rounded-full border theme-border flex items-center justify-center mx-auto" style={{ backgroundColor: 'var(--bg-overlay)' }}>
-            <Layers className="w-5 h-5 animate-pulse" strokeWidth={1.5} style={{ color: 'var(--accent-ochre-deep)' }} />
-          </div>
+          <img
+            src="/app-icon.png"
+            alt="Outfit Craft"
+            className="w-12 h-12 rounded-[14px] shadow-sm object-cover border theme-border mx-auto animate-pulse"
+          />
           <p className="eyebrow">Opening your wardrobe</p>
         </div>
       </div>
@@ -467,9 +469,16 @@ export function App() {
       {/* Global header */}
       <header className="sticky top-0 z-30 border-b theme-border backdrop-blur-md" style={{ backgroundColor: 'color-mix(in srgb, var(--bg-app) 88%, transparent)' }}>
         <div className="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-3">
-          <button type="button" onClick={() => setActiveTab('home')} className="text-left cursor-pointer">
-            <p className="eyebrow !text-[9px]">Wardrobe & Style Chronicle</p>
-            <h1 className="font-serif-display text-[22px] leading-none theme-text-primary">Wardro</h1>
+          <button type="button" onClick={() => setActiveTab('home')} className="flex items-center gap-2.5 text-left cursor-pointer group">
+            <img
+              src="/app-icon.png"
+              alt="Outfit Craft App Icon"
+              className="w-9 h-9 rounded-[10px] shadow-sm object-cover border theme-border transition-transform group-hover:scale-105"
+            />
+            <div>
+              <p className="eyebrow !text-[9px]">Wardrobe & Style Chronicle</p>
+              <h1 className="font-serif-display text-[22px] leading-none theme-text-primary">Outfit Craft</h1>
+            </div>
           </button>
           <div className="flex items-center gap-2">
             <button
@@ -483,15 +492,15 @@ export function App() {
               <Camera className="w-4 h-4" strokeWidth={1.5} />
               <span className="hidden sm:inline">Upload</span>
             </button>
-            <button
-              type="button"
-              onClick={() => goToLanding('download')}
-              aria-label="Get the Android app"
-              title="Get the Android app"
-              className="circle-btn"
+            <a
+              href={APK_URL}
+              download={APK_FILENAME}
+              aria-label="Download Outfit Craft Android APK"
+              title="Download Outfit Craft Android APK"
+              className="circle-btn inline-flex items-center justify-center cursor-pointer"
             >
               <Download className="w-4 h-4" strokeWidth={1.5} />
-            </button>
+            </a>
             <button type="button" onClick={handleToggleTheme} aria-label="Toggle light and dark mode" className="circle-btn">
               {preferences.theme === 'dark' ? <Sun className="w-4 h-4" strokeWidth={1.5} /> : <Moon className="w-4 h-4" strokeWidth={1.5} />}
             </button>

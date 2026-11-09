@@ -67,7 +67,7 @@ export const StorageAndBackupModal: React.FC<StorageAndBackupModalProps> = ({
         onError(
           err instanceof Error
             ? err.message
-            : 'Invalid backup file. Please choose a valid Wardro JSON export.'
+            : 'Invalid backup file. Please choose a valid Outfit Craft JSON export.'
         );
       }
     };
@@ -201,7 +201,7 @@ export const StorageAndBackupModal: React.FC<StorageAndBackupModalProps> = ({
               Import Data Backup
             </h3>
             <p className="text-xs theme-text-secondary leading-relaxed">
-              Restore your wardrobe from a previously exported Wardro JSON file.
+              Restore your wardrobe from a previously exported Outfit Craft JSON file.
             </p>
 
             {/* Merge vs Replace Mode Selector */}

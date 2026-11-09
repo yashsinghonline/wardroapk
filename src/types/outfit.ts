@@ -69,7 +69,7 @@ export interface AppPreferences {
 }
 
 export interface BackupPayload {
-  appName: 'Wardro' | 'OutfitCraft';
+  appName: 'OutfitCraft';
   version: number;
   exportedAt: string;
   categories: CategoryDefinition[];

@@ -9,7 +9,7 @@ import {
   WishlistItem,
 } from '../types/outfit';
 
-const DB_NAME = 'WardroDeviceDB';
+const DB_NAME = 'OutfitCraftDeviceDB';
 const DB_VERSION = 1;
 const STORE_NAME = 'app_state';
 
@@ -257,7 +257,7 @@ export function buildExportBackupPayload(
   state: HydratedDeviceState
 ): BackupPayload {
   return {
-    appName: 'Wardro',
+    appName: 'OutfitCraft',
     version: 2,
     exportedAt: new Date().toISOString(),
     categories: state.categories,
@@ -277,7 +277,7 @@ export function downloadBackupJsonFile(state: HydratedDeviceState): string {
   const url = URL.createObjectURL(blob);
 
   const dateStamp = new Date().toISOString().slice(0, 10);
-  const filename = `wardro-backup-${dateStamp}.json`;
+  const filename = `outfit-craft-backup-${dateStamp}.json`;
 
   const anchor = document.createElement('a');
   anchor.href = url;
@@ -339,7 +339,7 @@ export function parseAndValidateBackupJson(rawText: string): BackupPayload {
       : { ...DEFAULT_PREFERENCES };
 
   return {
-    appName: 'Wardro',
+    appName: 'OutfitCraft',
     version: 2,
     exportedAt: parsed.exportedAt || new Date().toISOString(),
     categories: mergedCategories,

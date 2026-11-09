@@ -24,8 +24,8 @@ import {
   WifiOff,
 } from 'lucide-react';
 
-export const APK_URL = '/downloads/wardro.apk';
-export const APK_FILENAME = 'wardro.apk';
+export const APK_URL = '/downloads/outfit-craft.apk';
+export const APK_FILENAME = 'outfit-craft.apk';
 const APP_VERSION = 'v1.0.0';
 
 interface LandingPageProps {
@@ -51,8 +51,8 @@ const PROPORTIONS = [
 
 const FAQS = [
   {
-    q: 'Is Wardro free to use?',
-    a: 'Yes. Wardro is free, carries no ads, and never asks you to create an account. Your wardrobe, looks, and chronicle belong to you alone.',
+    q: 'Is Outfit Craft free to use?',
+    a: 'Yes. Outfit Craft is free, carries no ads, and never asks you to create an account. Your wardrobe, looks, and chronicle belong to you alone.',
   },
   {
     q: 'Where is my wardrobe data stored?',
@@ -64,7 +64,7 @@ const FAQS = [
   },
   {
     q: 'How do I install the Android APK?',
-    a: 'Tap “Download App”, open the downloaded wardro.apk, and allow installation from your browser when prompted. The whole process takes under a minute.',
+    a: 'Tap “Download for Android”, open the downloaded outfit-craft.apk, and allow installation from your browser when prompted. The whole process takes under a minute.',
   },
   {
     q: 'Can I use it without installing anything?',
@@ -325,9 +325,16 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onLaunchApp, theme, on
         }}
       >
         <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-3 px-4 sm:px-6">
-          <button type="button" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="text-left cursor-pointer">
-            <p className="eyebrow !text-[8px]">Wardrobe & Style Chronicle</p>
-            <span className="font-serif-display text-[21px] leading-none theme-text-primary">Wardro</span>
+          <button type="button" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="flex items-center gap-2.5 text-left cursor-pointer group">
+            <img
+              src="/app-icon.png"
+              alt="Outfit Craft App Icon"
+              className="h-9 w-9 rounded-[10px] shadow-sm object-cover border theme-border transition-transform group-hover:scale-105"
+            />
+            <div>
+              <p className="eyebrow !text-[8px]">Wardrobe & Style Chronicle</p>
+              <span className="font-serif-display text-[21px] leading-none theme-text-primary">Outfit Craft</span>
+            </div>
           </button>
 
           <nav className="hidden items-center gap-1 md:flex" aria-label="Landing sections">
@@ -360,7 +367,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onLaunchApp, theme, on
               download={APK_FILENAME}
               className="min-h-[40px] px-4 rounded-full pill-dark text-[11px] font-semibold uppercase tracking-[0.1em] inline-flex items-center gap-1.5 cursor-pointer"
             >
-              <Download className="h-3.5 w-3.5" strokeWidth={1.5} /> Download App
+              <Download className="h-3.5 w-3.5" strokeWidth={1.5} /> Download
             </a>
           </div>
         </div>
@@ -380,7 +387,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onLaunchApp, theme, on
                 </span>
               </h1>
               <p className="mt-5 max-w-md text-[15px] leading-[1.6] theme-text-secondary">
-                Wardro turns the clothes you already own into an edited lookbook — compose outfits across
+                Outfit Craft turns the clothes you already own into an edited lookbook — compose outfits across
                 categories, plan them on a monthly chronicle, and understand your wardrobe through quiet, beautiful
                 analytics.
               </p>
@@ -392,7 +399,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onLaunchApp, theme, on
                   className="group inline-flex min-h-[54px] items-center gap-2.5 rounded-full pill-dark px-7 text-[12px] font-semibold uppercase tracking-[0.12em] transition-transform hover:-translate-y-0.5"
                 >
                   <Download className="h-4 w-4 transition-transform group-hover:translate-y-0.5" strokeWidth={1.5} />
-                  Download App (APK)
+                  Download for Android
                 </a>
                 <button
                   type="button"
@@ -674,7 +681,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onLaunchApp, theme, on
                   in your pocket.
                 </h2>
                 <p className="mt-4 max-w-md text-[14px] leading-[1.6] theme-text-secondary">
-                  Install Wardro on Android and keep your lookbook, chronicle, and wishlist with you — fully
+                  Install Outfit Craft on Android and keep your lookbook, chronicle, and wishlist with you — fully
                   offline, fully private.
                 </p>
 
@@ -695,7 +702,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onLaunchApp, theme, on
                   {[
                     'Download the APK below.',
                     'Allow installation from your browser when prompted.',
-                    'Open Wardro and upload your first pieces.',
+                    'Open Outfit Craft and upload your first pieces.',
                   ].map((step, idx) => (
                     <li key={step} className="flex items-start gap-3 text-[13px] theme-text-secondary">
                       <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full pill-dark font-serif-display text-[12px] italic">
@@ -713,18 +720,20 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onLaunchApp, theme, on
                     <Smartphone className="h-3.5 w-3.5" strokeWidth={1.5} /> Android
                   </span>
                   <span className="rounded-full border px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.14em]" style={{ borderColor: 'var(--accent-sage-deep)', color: 'var(--accent-sage-deep)' }}>
-                    Universal build
+                    Official APK Build
                   </span>
                 </div>
 
                 <div className="mt-8 flex items-center gap-4">
-                  <div className="flex h-16 w-16 items-center justify-center rounded-[18px] pill-dark">
-                    <Layers className="h-7 w-7" strokeWidth={1.5} />
-                  </div>
+                  <img
+                    src="/app-icon.png"
+                    alt="Outfit Craft App Icon"
+                    className="h-16 w-16 rounded-[18px] shadow-sm object-cover border theme-border"
+                  />
                   <div>
-                    <p className="font-serif-display text-[26px] leading-none theme-text-primary">Wardro</p>
+                    <p className="font-serif-display text-[26px] leading-none theme-text-primary">Outfit Craft</p>
                     <p className="mt-1.5 text-[12px] theme-text-secondary">
-                      {APP_VERSION} · {APK_FILENAME}
+                      {APP_VERSION} · {APK_FILENAME} (5.2 MB)
                     </p>
                   </div>
                 </div>
@@ -735,7 +744,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onLaunchApp, theme, on
                   className="group mt-8 flex min-h-[60px] w-full items-center justify-center gap-3 rounded-[16px] pill-dark text-[13px] font-semibold uppercase tracking-[0.12em] transition-transform hover:-translate-y-0.5"
                 >
                   <Download className="h-5 w-5 transition-transform group-hover:translate-y-0.5" strokeWidth={1.5} />
-                  Download App (APK)
+                  Download for Android
                 </a>
 
                 <button
@@ -747,11 +756,9 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onLaunchApp, theme, on
                   {copied ? 'Link copied' : 'Copy download link'}
                 </button>
 
-                <p className="mt-5 rounded-[12px] border border-dashed theme-border px-4 py-3 font-mono text-[10.5px] leading-[1.6] theme-text-muted flex items-center gap-2">
-                  <ShieldCheck className="h-4 w-4 shrink-0" style={{ color: 'var(--accent-sage-deep)' }} />
-                  <span>
-                    Android package ready (<span style={{ color: 'var(--accent-ochre-deep)' }}>wardro.apk</span> · 5.2 MB). Click above to install directly on your device.
-                  </span>
+                <p className="mt-5 rounded-[12px] border border-dashed theme-border px-4 py-3 text-[11px] leading-[1.6] theme-text-muted flex items-center gap-2">
+                  <Check className="h-4 w-4 shrink-0" style={{ color: 'var(--accent-sage-deep)' }} />
+                  <span>Release build <strong className="font-semibold theme-text-primary">{APK_FILENAME}</strong> ready for Android 8.0+. Direct sideload install.</span>
                 </p>
 
                 <div className="mt-6 border-t theme-border pt-6">
@@ -817,7 +824,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onLaunchApp, theme, on
             </h2>
             <div className="mt-7 flex flex-wrap items-center justify-center gap-3">
               <a href={APK_URL} download={APK_FILENAME} className="inline-flex min-h-[52px] items-center gap-2 rounded-full pill-dark px-7 text-[12px] font-semibold uppercase tracking-[0.12em]">
-                <Download className="h-4 w-4" strokeWidth={1.5} /> Download App
+                <Download className="h-4 w-4" strokeWidth={1.5} /> Download the APK
               </a>
               <button type="button" onClick={onLaunchApp} className="inline-flex min-h-[52px] items-center gap-2 rounded-full border theme-border px-6 text-[12px] font-semibold uppercase tracking-[0.12em] cursor-pointer">
                 <Plus className="h-4 w-4" strokeWidth={1.5} /> Try the web studio
@@ -830,9 +837,16 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onLaunchApp, theme, on
       {/* Footer */}
       <footer className="border-t theme-border py-10">
         <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-6 px-4 sm:px-6 md:flex-row">
-          <div className="text-center md:text-left">
-            <p className="font-serif-display text-[22px] theme-text-primary">Wardro</p>
-            <p className="mt-1 text-[12px] theme-text-secondary">Crafted for the considered wardrobe.</p>
+          <div className="flex items-center gap-3 text-center md:text-left">
+            <img
+              src="/app-icon.png"
+              alt="Outfit Craft App Icon"
+              className="h-9 w-9 rounded-[10px] shadow-xs object-cover border theme-border"
+            />
+            <div>
+              <p className="font-serif-display text-[22px] leading-tight theme-text-primary">Outfit Craft</p>
+              <p className="mt-0.5 text-[12px] theme-text-secondary">Crafted for the considered wardrobe.</p>
+            </div>
           </div>
           <nav className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2" aria-label="Footer">
             {NAV_LINKS.map((link) => (
@@ -841,13 +855,13 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onLaunchApp, theme, on
               </button>
             ))}
             <a href={APK_URL} download={APK_FILENAME} className="text-[12px] font-semibold theme-text-secondary transition-colors cursor-pointer hover:text-[#BA9B67]">
-              Download App
+              Download
             </a>
             <button type="button" onClick={onLaunchApp} className="text-[12px] font-semibold theme-text-secondary transition-colors cursor-pointer hover:text-[#BA9B67]">
               Open studio
             </button>
           </nav>
-          <p className="text-[11px] theme-text-muted">© 2026 Wardro · {APP_VERSION}</p>
+          <p className="text-[11px] theme-text-muted">© 2026 Outfit Craft · {APP_VERSION}</p>
         </div>
       </footer>
     </div>
